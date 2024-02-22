@@ -1,0 +1,18 @@
+.row1 {
+    display: inline;
+}
+.col-1_img {
+    width: 20%;
+    display: inline;
+}
+.col2 {
+    position: relative;
+    left: 250px;
+    bottom: 120px;
+}
+.col-2_publish_time {
+    font-size: 14px;
+}
+.col-2_title {
+    font-size: 24px;
+}

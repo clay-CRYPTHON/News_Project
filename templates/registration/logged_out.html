@@ -1,0 +1,12 @@
+ {% extends 'news/base.html' %}
+{% load static %}
+
+{% block title %} Logout sahifasi {% endblock title %}
+{% block content %}
+
+    <h2>Log Out</h2>
+    <p>Siz veb saytdan chiqdingiz. <a href="{% url 'login' %}">Qaytadan kirish</a></p>
+    <a class="text-primary" href="{% url 'home_page' %}">Bosh sahifaga qaytish</a>
+
+
+{% endblock content %}

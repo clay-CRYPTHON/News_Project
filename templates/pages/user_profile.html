@@ -1,0 +1,30 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block title %} Foydalanuvchi profili {% endblock title %}
+{% block content %}
+
+    <div class="container">
+        <h1>Xush kelibsiz, {{ user.username }}</h1>
+        <h3>Siz haqingizda ma'lumotlar</h3>
+        <div class="profile" style="display: flex; align-items: center; justify-content: space-around; padding-bottom: 20px ">
+            <div class="profile_img">
+                <img src="{{ profile.photo.url }}" width="50%">
+            </div>
+            <div class="profile_text" style="font-size: 24px; ">
+                <label>Username: </label> <input value="{{ user.username }}" readonly placeholder="Kiritilmagan"> <br>
+                <label>Emailingiz: </label> <input value="{{ user.email }}" readonly placeholder="Kiritilmagan"> <br>
+                <label>Ismingiz: </label> <input value="{{ user.first_name }}" readonly placeholder="Kiritilmagan"> <br>
+                <label>Familiyangiz: </label> <input value="{{ user.last_name }}" readonly placeholder="Kiritilmagan"> <br>
+                <h4>Tugulgan yilingiz: {{ profile.date_of_birth }}</h4>
+            </div>
+        </div>
+    </div>
+
+    <h4 class="text-center" style="margin: 100px 0">
+        <a href="{% url 'password_change' %}" style="color: red">Parolni almashtirish</a> |
+        <a href="{% url 'edit_user_information' %}" style="color:red;">Profilni o'zgartirish</a>
+    </h4>
+    <h3 style="position: absolute; top: 880px; left: 690px"><a href="{% url 'logout' %}" class="text-uppercase" style="background-color: red; color: #FFFFFF;  padding: 10px">Log out</a></h3>
+
+{% endblock content %}

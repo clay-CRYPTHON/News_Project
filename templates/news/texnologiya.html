@@ -1,0 +1,26 @@
+{% extends 'news/base.html' %}
+{% load static %}
+{% load hitcount_tags %}
+
+{% block title %} Texnologiya xabarlar {% endblock title %}
+
+{% block content %}
+
+    {% for news in texnologiya_yangiliklar %}
+        <div class="container">
+            <div class="row1">
+                <div class="col1">
+                    <a href="{{ news.get_absolute_url }}"><img class="col-1_img" src="{{ news.image.url }}" alt="{{ news.title }}"></a>
+                </div>
+                <div class="col2">
+                    <a href="{{ news.get_absolute_url }}">
+                        <h5 class="col-2_publish_time">{{ news.publish_time }}</h5>
+                        <p>Ko'rilganlar soni: <i class="fa fa-eye" aria-hidden="true"></i> {% get_hit_count for news %}</p>
+                        <h2 class="col-2_title">{{ news.title }}</h2>
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock content %}
