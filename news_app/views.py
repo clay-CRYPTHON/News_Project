@@ -189,7 +189,7 @@ class NewsDeleteView(OnlyLoggedSuperUser, DeleteView):
 class NewsCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     model = News
     template_name = 'crud/news_create.html'
-    fields = ('title', 'slug', 'body', 'image', 'category', 'status')
+    fields = ('title','title_uz', 'title_en', 'title_ru', 'slug', 'body', 'body_uz', 'body_en', 'body_ru', 'image', 'category', 'status')
 
 
 @login_required
@@ -211,3 +211,6 @@ class SearchResultsList(ListView):
         return News.objects.filter(
             Q(title__icontains=query) | Q(body__icontains=query)
         )
+
+# https://github.com/mukhammad-irmatov/mohirdev_praktikum_project
+# 08:02
